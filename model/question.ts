@@ -36,4 +36,13 @@ export default class QuestionModel {
 
         return false
     }
+
+    converterParaObjeto(){
+        return {
+            id: this.#id,
+            enunciado: this.#enunciado,
+            respostas: this.#respostas.map(r => r.converterParaObjeto()),
+            acertou: this.#acertou
+        }
+    }
 }
