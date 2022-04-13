@@ -10,7 +10,7 @@ const questions: QuestionModel[] = [
         RespostaModel.respostaErrada('Pastel'),
         RespostaModel.respostaCerta('Maconha')
     ]),
-    new QuestionModel(300, 'Pergunta 2 ? ', [
+    new QuestionModel(250, 'Pergunta 2 ? ', [
 
         RespostaModel.respostaErrada('fone'),
         RespostaModel.respostaErrada('mouse'),
