@@ -1,12 +1,14 @@
+import RespostaModel from './resposta'
+
 export default class QuestionModel {
 
     #id: number
     #enunciado: string
-    #respostas: any[]
+    #respostas: RespostaModel[]
     #acertou: boolean
-    // #respondida: boolean
+  
 
-    constructor(id: number, enunciado: string, respostas: any[], acertou = false){
+    constructor(id: number, enunciado: string, respostas: RespostaModel[], acertou = false){
         this.#id = id
         this.#enunciado = enunciado
         this.#respostas = respostas
@@ -27,6 +29,11 @@ export default class QuestionModel {
     }
 
     get respondida() {
+        
+        for(let r of this.#respostas) {
+            if(r.revelada) return true
+        }
+
         return false
     }
 }
