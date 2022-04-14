@@ -9,7 +9,8 @@ export default (req, res) => {
 
   if(questionFiltrada.length === 1){
 
-    const question = questionFiltrada[0]
+    const question = questionFiltrada[0].embaralharRespostas()
+    
     res.status(200).json(question.converterParaObjeto())
 
   }else{
