@@ -3,6 +3,14 @@ import Enunciado from '../Enunciado'
 import Resposta from '../Resposta'
 import { Container } from './style'
 
+const letras = [
+    {vaLor: 'A', cor: '#F2C866'},
+    {valor: 'B', cor: '#F266BA'},
+    {valor: 'C', cor: '#85D4F2'},
+    {valor: 'D', cor: '#BCE596'},
+    {valor: 'E', cor: 'purple'}
+]
+
 interface QuestaoProps {
     valor: QuestionModel
 }
@@ -19,8 +27,8 @@ const Questao = (props: QuestaoProps) => {
                 key={i}
                 valor={r}
                 indice={i}
-                letra='A'
-                corFundoLetra = '#F2C866'
+                letra={letras[i].valor}
+                corFundoLetra ={letras[i].cor}
             />
             
         })
