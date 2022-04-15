@@ -35,6 +35,7 @@ const Home = () => {
         respostaFornecida={respostaFornecida}
         tempoEsgotado={tempoEsgotado}
       /> 
+      <Botao texto=' Próximo ' />
     
     </Container>
       
