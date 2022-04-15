@@ -19,8 +19,6 @@ export const ConteudoResposta = styled.div`
     transform-style: preserve-3d;
 
     :hover{
-
-        background-color: red;
         cursor: pointer;
     }
   
@@ -37,6 +35,11 @@ export const Frente = styled.div`
     padding: 15px;
     color: #000;
     background-color: #fff;
+
+    :hover {
+        background-color: rgb(153, 153, 255);
+        transition: 1.3s;
+    }
 `
 
 export const Verso = styled.div`
@@ -72,7 +75,6 @@ export const Valor = styled.div`
 `
 
 export const RespostaCerta = styled.div`
-
    color: blue;
 `
 

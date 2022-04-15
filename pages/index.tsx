@@ -1,9 +1,8 @@
-import Questao from '../components/Questao'
-import Botao from '../components/Botao'
 import QuestionModel from '../model/question'
 import RespostaModel from '../model/resposta'
 import { Container } from './style'
 import { useState } from 'react'
+import Questionario from '../components/Questionario'
 
 const questaoMock = new QuestionModel(1, 'Cor ? ', [
   RespostaModel.respostaErrada('verde'),
@@ -17,26 +16,25 @@ const Home = () => {
 
   const [ questao, setQuestao ] = useState(questaoMock)
 
-  const respostaFornecida = (indice: number) => {
-    setQuestao(questao.responderCom(indice)) 
+  const questionRespondida = (questao: QuestionModel) => {
+
   }
 
-  const tempoEsgotado = () => {
-    if(questao.naoRespondida){
-      setQuestao(questao.responderCom(-1)) 
-    }
+  const irPraProximoPasso = () => {
+      
   }
-
+  
   return (
     <Container>
-      <Questao 
-        valor={questao}
-        tempoPraResposta={12}
-        respostaFornecida={respostaFornecida}
-        tempoEsgotado={tempoEsgotado}
-      /> 
-      <Botao texto=' Próximo ' />
-    
+      <Questionario 
+
+          question={questao}
+          ultima={true}
+          questionRespondida={questionRespondida}
+          irPraProximoPasso={irPraProximoPasso}
+      
+      />
+  
     </Container>
       
   )
