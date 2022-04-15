@@ -17,6 +17,12 @@ export const ConteudoResposta = styled.div`
     flex: 1;
     transition: transform 0.8s;
     transform-style: preserve-3d;
+
+    :hover{
+
+        background-color: red;
+        cursor: pointer;
+    }
   
 `
 export const Frente = styled.div`
@@ -34,17 +40,20 @@ export const Frente = styled.div`
 `
 
 export const Verso = styled.div`
-    position: absolute;
+     position: absolute;
     display: flex;
     height: 100%;
     width: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    transform: rotateY(180deg);
-  
+    align-items: center;
+    border-radius: 12px;
+    padding: 15px;
+    color: #000;
+    background-color: #ccc;
 `
 export const Letra = styled.div`
-   display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 40px;
@@ -54,9 +63,19 @@ export const Letra = styled.div`
     font-weight: 700;
     margin-right: 20px;
     color: #fff;
+    
 `
 export const Valor = styled.div`
-  font-size: 1.3rem;
     font-weight: 700;
+    font-size: 1.5rem;
   
+`
+
+export const RespostaCerta = styled.div`
+
+   color: blue;
+`
+
+export const RespostaErrada = styled.div`
+  color: red;
 `
