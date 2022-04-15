@@ -30,6 +30,7 @@ const Home = () => {
     <Container>
       <Questao 
         valor={questao}
+        tempoPraResposta={12}
         respostaFornecida={respostaFornecida}
         tempoEsgotado={tempoEsgotado}
       /> 
