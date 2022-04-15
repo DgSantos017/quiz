@@ -38,6 +38,10 @@ export default class QuestionModel {
         return false
     }
 
+    get naoRespondida() {
+        return !this.respondida
+    }
+
     responderCom(indice: number): QuestionModel {
 
         const acertou = this.#respostas[indice]?.certa

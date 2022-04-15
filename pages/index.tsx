@@ -17,15 +17,22 @@ const Home = () => {
   const [ questao, setQuestao ] = useState(questaoMock)
 
   const respostaFornecida = (indice: number) => {
+    setQuestao(questao.responderCom(indice)) 
+  }
 
-    console.log(indice)
-    setQuestao(questao.responderCom(indice))
-    
+  const tempoEsgotado = () => {
+    if(questao.naoRespondida){
+      setQuestao(questao.responderCom(-1)) 
+    }
   }
 
   return (
     <Container>
-      <Questao valor={questao} respostaFornecida={respostaFornecida} /> 
+      <Questao 
+        valor={questao}
+        respostaFornecida={respostaFornecida}
+        tempoEsgotado={tempoEsgotado}
+      /> 
     </Container>
       
   )

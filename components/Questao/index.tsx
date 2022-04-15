@@ -1,6 +1,7 @@
 import QuestionModel from '../../model/question'
 import Enunciado from '../Enunciado'
 import Resposta from '../Resposta'
+import Temporizador from '../Temporizadorr'
 import { Container } from './style'
 
 const letras = [
@@ -14,6 +15,7 @@ const letras = [
 interface QuestaoProps {
     valor: QuestionModel
     respostaFornecida: (indice: number) => void
+    tempoEsgotado: () => void
 }
 
 const Questao = (props: QuestaoProps) => {
@@ -40,6 +42,7 @@ const Questao = (props: QuestaoProps) => {
 
         <Container>
             <Enunciado texto={questao.enunciado} />
+            <Temporizador duration={10} tempoEsgotado={props.tempoEsgotado} />
             {rendeirizarRespostas()}
         </Container>
     )
