@@ -1,4 +1,5 @@
 import Questao from '../components/Questao'
+import Botao from '../components/Botao'
 import QuestionModel from '../model/question'
 import RespostaModel from '../model/resposta'
 import { Container } from './style'
@@ -34,6 +35,7 @@ const Home = () => {
         respostaFornecida={respostaFornecida}
         tempoEsgotado={tempoEsgotado}
       /> 
+    
     </Container>
       
   )
