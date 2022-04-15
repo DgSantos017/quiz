@@ -6,6 +6,7 @@ interface RespostaProps {
     indice: number
     letra: string
     corFundoLetra: string
+    respostaFornecida: (indice: number) => void
 }
 
 const Resposta = (props: RespostaProps) => {
@@ -14,7 +15,7 @@ const Resposta = (props: RespostaProps) => {
 
     return (
 
-        <Container>
+        <Container onClick={() => props.respostaFornecida(props.indice)}>
             <ConteudoResposta>
                 <Frente>
                     <Letra style={{backgroundColor: props.corFundoLetra}}>
