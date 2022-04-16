@@ -1,4 +1,4 @@
-import { Container, Bolas } from './style'
+import { Container, Bolas } from '../styles/styleIndex'
 import { useRouter } from 'next/router'
 import Estatistica from '../components/Estatistica'
 import Botao from '../components/Botao'
