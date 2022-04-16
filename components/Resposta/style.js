@@ -16,7 +16,7 @@ export const ConteudoResposta = styled.div`
     position: relative;
     display: flex;
     flex: 1;
-    transition: transform 0.8s;
+    transition: transform 2.5s;
     transform-style: preserve-3d;
 
     :hover{
@@ -55,6 +55,7 @@ export const Verso = styled.div`
     padding: 15px;
     background-color: white;
     color: black;
+    transform: rotateY(180deg);
 `
 export const Letra = styled.div`
     display: flex;

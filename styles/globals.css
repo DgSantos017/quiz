@@ -17,3 +17,6 @@ a {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+.respostaRevelada{
+  transform: rotateY(180deg);
+}

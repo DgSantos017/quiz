@@ -12,12 +12,13 @@ interface RespostaProps {
 const Resposta = (props: RespostaProps) => {
 
     const resposta = props.valor
+    const respostaRevelada = resposta.revelada ? 'respostaRevelada' : ''
 
     return (
 
         <Container onClick={() => props.respostaFornecida(props.indice)}>
-            <ConteudoResposta>
-            {!resposta.revelada ? (
+            <ConteudoResposta className={respostaRevelada}>
+            
                  <Frente>
                     <Letra style={{backgroundColor: props.corFundoLetra}}>
                         {props.letra}
@@ -26,7 +27,7 @@ const Resposta = (props: RespostaProps) => {
                         {resposta.valor}
                     </Valor>
                 </Frente>
-            ) : (
+            
                 <>
                 {resposta.certa ? (
                 <Verso style={{backgroundColor: 'blue'}}>
@@ -44,9 +45,7 @@ const Resposta = (props: RespostaProps) => {
                 </Verso>
                 )}
                 </>
-                
-            )}
-               
+                              
             </ConteudoResposta>
         </Container>
     )
