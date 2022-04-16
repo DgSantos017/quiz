@@ -48,10 +48,9 @@ const Home = () => {
 
   const idProximaPergunta = () => {
 
-      if(questao){
-        const proxIndicie = idsQuestoes.indexOf(questao.id) + 1
-        return idsQuestoes[proxIndicie]
-      }  
+      const proxIndicie = idsQuestoes.indexOf(questao.id) + 1
+      return idsQuestoes[proxIndicie]
+     
   }
 
   const irPraProximoPasso = () => {
@@ -73,12 +72,14 @@ const Home = () => {
     })
   }
   
-  return <Questionario 
-          question={questao}
-          ultima={idProximaPergunta() === undefined}
-          questionRespondida={questionRespondida}
-          irPraProximoPasso={irPraProximoPasso}
-      />
+  return questao ? (
+    <Questionario 
+      question={questao}
+      ultima={idProximaPergunta() === undefined}
+      questionRespondida={questionRespondida}
+      irPraProximoPasso={irPraProximoPasso}
+    />
+  ) : false
 }
 
 export default Home

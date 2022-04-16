@@ -1,7 +1,7 @@
 import QuestionModel from '../../model/question'
 import Enunciado from '../Enunciado'
 import Resposta from '../Resposta'
-import Temporizador from '../Temporizadorr'
+import Temporizador from '../Temporizador'
 import { Container } from './style'
 
 const letras = [
@@ -28,7 +28,7 @@ const Questao = (props: QuestaoProps) => {
         return questao.respostas.map((r, i) => {
 
             return <Resposta 
-                        key={i}
+                        key={`${questao.id}-${i}`}
                         valor={r}
                         indice={i}
                         letra={letras[i].valor}
@@ -40,7 +40,7 @@ const Questao = (props: QuestaoProps) => {
 
     return <Container>
                 <Enunciado texto={questao.enunciado} />
-                <Temporizador duration={props.tempoPraResposta ?? 10} tempoEsgotado={props.tempoEsgotado} />
+                <Temporizador key={questao.id} duration={props.tempoPraResposta ?? 10} tempoEsgotado={props.tempoEsgotado} />
                 {rendeirizarRespostas()}
             </Container>
 }
