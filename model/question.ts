@@ -8,7 +8,6 @@ export default class QuestionModel {
     #respostas: RespostaModel[]
     #acertou: boolean
   
-
     constructor(id: number, enunciado: string, respostas: RespostaModel[], acertou = false){
         this.#id = id
         this.#enunciado = enunciado
@@ -63,6 +62,11 @@ export default class QuestionModel {
         return new QuestionModel(this.#id, this.#enunciado, respostasEmbaralhadas, this.#acertou)
     }
 
+    static criarUsandoObjeto(obj: QuestionModel): QuestionModel{
+
+        const respostas = obj.respostas.map(r => RespostaModel.criarUsandoObjeto(r))
+        return new QuestionModel(obj.id, obj.enunciado, respostas, obj.acertou)
+    }
 
     converterParaObjeto(){
         return {
@@ -71,7 +75,6 @@ export default class QuestionModel {
             respondida: this.respondida,
             enunciado: this.#enunciado,
             respostas: this.#respostas.map(r => r.converterParaObjeto()),
-            
         }
     }
 }

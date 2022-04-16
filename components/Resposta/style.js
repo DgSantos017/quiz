@@ -37,7 +37,7 @@ export const Frente = styled.div`
     background-color: #fff;
 
     :hover {
-        background-color: rgb(153, 153, 255);
+        background-color: #00b0ff;
         transition: 1.3s;
     }
 `

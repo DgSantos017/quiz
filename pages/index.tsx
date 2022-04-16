@@ -31,7 +31,9 @@ const Home = () => {
 
     const resp = await fetch(`${BASE_URL}/questions/${idQuestao}`)
     const json = await resp.json()
-    console.log(json)
+    const novaQuestao = QuestionModel.criarUsandoObjeto(json)
+    
+    setQuestao(novaQuestao)
   }
 
   useEffect(() => {

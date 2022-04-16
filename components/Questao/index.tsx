@@ -28,25 +28,21 @@ const Questao = (props: QuestaoProps) => {
         return questao.respostas.map((r, i) => {
 
             return <Resposta 
-                key={i}
-                valor={r}
-                indice={i}
-                letra={letras[i].valor}
-                corFundoLetra ={letras[i].cor}
-                respostaFornecida={props.respostaFornecida}
-            />
-            
+                        key={i}
+                        valor={r}
+                        indice={i}
+                        letra={letras[i].valor}
+                        corFundoLetra ={letras[i].cor}
+                        respostaFornecida={props.respostaFornecida}
+                    />   
         })
     }
 
-    return (
-
-        <Container>
-            <Enunciado texto={questao.enunciado} />
-            <Temporizador duration={props.tempoPraResposta ?? 10} tempoEsgotado={props.tempoEsgotado} />
-            {rendeirizarRespostas()}
-        </Container>
-    )
+    return <Container>
+                <Enunciado texto={questao.enunciado} />
+                <Temporizador duration={props.tempoPraResposta ?? 10} tempoEsgotado={props.tempoEsgotado} />
+                {rendeirizarRespostas()}
+            </Container>
 }
 
 export default Questao

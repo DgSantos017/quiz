@@ -9,12 +9,12 @@ export default class RespostaModel {
         this.#valor = valor
         this.#certa = certa
         this.#revelada = revelada
-
    }
 
    static respostaCerta(valor: string){
       return new RespostaModel(valor, true)
    }
+   
    static respostaErrada(valor: string){
       return new RespostaModel(valor, false)
    }
@@ -33,6 +33,10 @@ export default class RespostaModel {
 
    revelar(){
       return new RespostaModel(this.#valor, this.#certa, true)
+   }
+
+   static criarUsandoObjeto(obj: RespostaModel): RespostaModel{
+      return new RespostaModel(obj.valor, obj.certa, obj.revelada)
    }
 
    converterParaObjeto(){

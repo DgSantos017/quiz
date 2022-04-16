@@ -9,7 +9,6 @@ interface TemporizadorProps {
 const Temporizador = (props: TemporizadorProps) => {
 
     return (
-
         <Container>
             <CountdownCircleTimer 
             
@@ -21,7 +20,7 @@ const Temporizador = (props: TemporizadorProps) => {
                 colorsTime={[7, 5, 2, 0]}
             >
                 {({ remainingTime  }) => remainingTime}
-
+                
             </CountdownCircleTimer>
         </Container>
     )

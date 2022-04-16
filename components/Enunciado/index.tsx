@@ -6,14 +6,11 @@ interface EnunciadoProps {
 
 const Enunciado = (props: EnunciadoProps) => {
 
-    return (
-
-        <Container>
-            <Texto>
-                {props.texto}
-            </Texto>
-        </Container>
-    )
+    return <Container>
+                <Texto>
+                    {props.texto}
+                </Texto>
+            </Container>
 }
 
 export default Enunciado
