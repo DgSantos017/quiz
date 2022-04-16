@@ -1,5 +1,7 @@
-import { Container, Total, Certas, Percentual } from './style'
+import { Container, Bolas } from './style'
 import { useRouter } from 'next/router'
+import Estatistica from '../components/Estatistica'
+import Botao from '../components/Botao'
 
 const resultado = () => {
 
@@ -11,10 +13,19 @@ const resultado = () => {
 
     return(
         <Container>
-            <Total> {total} </Total>
-            <Certas> {certas} </Certas>
-            <Percentual> {percentual} % </Percentual>
+
+            <h1> Resultado Final </h1>
+
+            <Bolas>
+                <Estatistica texto='Perguntas' valor={total} />
+                <Estatistica texto='Certas' valor={certas}  corFundo='#9CD2A4' />
+                <Estatistica texto='Percentual' valor={`${percentual} %`} corFundo='#66bb6a' />
+            </Bolas>
+
+            <Botao href='/' texto=' Tentar Novamente '/>
+
         </Container>
     )
 }
+
 export default resultado

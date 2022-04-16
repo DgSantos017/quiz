@@ -13,6 +13,7 @@ export const Button = styled.section`
  margin-top: 32px;
  cursor: pointer;
  transition: all .2s ease-in-out;
+ box-shadow: 8px 8px 8px rgba(0,0,0,0.5);
 
 :hover{
     background-color: blue;

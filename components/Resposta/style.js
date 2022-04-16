@@ -8,6 +8,7 @@ export const Container = styled.section`
     height: 100px;
     margin: 10px;
     perspective: 1000px;
+    box-shadow: 8px 8px 8px rgba(0,0,0,0.4);
   
 `
 export const ConteudoResposta = styled.div`
