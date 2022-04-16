@@ -1,5 +1,5 @@
 import RespostaModel from '../../model/resposta'
-import { Container, ConteudoResposta, Frente, Verso, Letra, Valor,Revelacao } from './style'
+import styles from './Resposta.module.css'
 
 interface RespostaProps {
     valor: RespostaModel
@@ -16,38 +16,38 @@ const Resposta = (props: RespostaProps) => {
 
     return (
 
-        <Container onClick={() => props.respostaFornecida(props.indice)}>
-            <ConteudoResposta className={respostaRevelada}>
+        <section className={styles.container} onClick={() => props.respostaFornecida(props.indice)}>
+            <div className={`${styles.conteudoResposta} ${respostaRevelada}`}>
             
-                 <Frente>
-                    <Letra style={{backgroundColor: props.corFundoLetra}}>
+                 <div className={styles.frente}>
+                    <div className={styles.letra} style={{backgroundColor: props.corFundoLetra}}>
                         {props.letra}
-                    </Letra>
-                    <Valor>
+                    </div>
+                    <div className={styles.valor}>
                         {resposta.valor}
-                    </Valor>
-                </Frente>
+                    </div>
+                </div>
             
                 <>
                 {resposta.certa ? (
-                <Verso style={{backgroundColor: 'blue'}}>
-                    <Revelacao >
-                        <Valor> {resposta.valor} </Valor>
+                <div className={styles.verso} style={{backgroundColor: 'blue'}}>
+                    <div className={styles.revelacao} >
+                        <div className={styles.valor}> {resposta.valor} </div>
                         <div> Resposta certa :) </div>
-                    </Revelacao>  
-                </Verso>
+                    </div>  
+                </div>
                 ) : (
-                <Verso  style={{backgroundColor: 'red'}}>
-                    <Revelacao>
-                        <Valor> {resposta.valor} </Valor>
+                <div className={styles.verso}  style={{backgroundColor: 'red'}}>
+                    <div className={styles.revelacao} >
+                        <div className={styles.valor}> {resposta.valor} </div>
                         <div> Resposta errada :( </div>
-                    </Revelacao>  
-                </Verso>
+                    </div>  
+                </div>
                 )}
                 </>
                               
-            </ConteudoResposta>
-        </Container>
+            </div>
+        </section>
     )
 }
 

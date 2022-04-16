@@ -1,6 +1,6 @@
 import QuestionModel from '../../model/question'
 import Questao from '../Questao'
-import { Container } from './style'
+import styles from './Questionario.module.css'
 import Botao from '../Botao'
 
 interface QuestionarioProps {
@@ -20,7 +20,7 @@ const Questionario = (props: QuestionarioProps) => {
     }
 
     return (
-        <Container>
+        <section className={styles.container}>
             {
                 props.question ? 
                     <Questao 
@@ -36,7 +36,7 @@ const Questionario = (props: QuestionarioProps) => {
                 onClick={props.irPraProximoPasso} 
                 texto={props.ultima ? 'Finalizar' : 'Próxima'} 
             />
-        </Container>
+        </section>
     )
     
 }

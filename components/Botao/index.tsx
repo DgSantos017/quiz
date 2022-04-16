@@ -1,4 +1,4 @@
-import { Button } from './style'
+import styles from './Botao.module.css'
 import Link from 'next/link'
 
 interface BotaoProps {
@@ -11,9 +11,9 @@ const Botao = (props: BotaoProps) => {
 
     const rendeirizarBotao = () => {
         return (
-            <Button onClick={props.onClick}>
+            <div className={styles.container} onClick={props.onClick}>
                 {props.texto}
-            </Button>
+            </div>
         )
     }
 

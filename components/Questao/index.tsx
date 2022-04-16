@@ -2,7 +2,7 @@ import QuestionModel from '../../model/question'
 import Enunciado from '../Enunciado'
 import Resposta from '../Resposta'
 import Temporizador from '../Temporizador'
-import { Container } from './style'
+import styles from './Questao.module.css'
 
 const letras = [
     {vaLor: 'A', cor: '#F2C866'},
@@ -38,11 +38,11 @@ const Questao = (props: QuestaoProps) => {
         })
     }
 
-    return <Container>
+    return <section className={styles.container}>
                 <Enunciado texto={questao.enunciado} />
                 <Temporizador key={questao.id} duration={props.tempoPraResposta ?? 10} tempoEsgotado={props.tempoEsgotado} />
                 {rendeirizarRespostas()}
-            </Container>
+            </section>
 }
 
 export default Questao

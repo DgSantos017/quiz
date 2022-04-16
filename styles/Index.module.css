@@ -1,0 +1,18 @@
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-size: 1.7rem;
+
+    }
+
+.bolas {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1000px;
+
+}
+

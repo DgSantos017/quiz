@@ -1,4 +1,4 @@
-import { Container, Texto } from './style'
+import styles from './Enunciado.module.css'
 
 interface EnunciadoProps {
     texto: string
@@ -6,11 +6,11 @@ interface EnunciadoProps {
 
 const Enunciado = (props: EnunciadoProps) => {
 
-    return <Container>
-                <Texto>
+    return <div className={styles.container}>
+                <div className={styles.texto}>
                     {props.texto}
-                </Texto>
-            </Container>
+                </div>
+            </div>
 }
 
 export default Enunciado

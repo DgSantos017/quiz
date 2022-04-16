@@ -1,4 +1,4 @@
-import { Container, Valor, Texto } from './style'
+import styles from './Estatistica.module.css'
 
 interface EstatisticaProps {
     valor: any
@@ -9,18 +9,19 @@ interface EstatisticaProps {
 
 const Estatistica = (props: EstatisticaProps) => {
 
-    return <Container>
-                <Valor style={{
+    return <section className={styles.container}>
+
+                <div className={styles.valor} style={{
                     backgroundColor: props.corFundo ?? '#FDD60F',
                     color: props.corFonte ?? '#333'
                 }}>
                     {props.valor}
-                </Valor>
+                </div>
 
-                <Texto>
+                <div className={styles.texto}>
                     {props.texto}
-                </Texto>
-           </Container>
+                </div>
+           </section>
 }
 
 export default Estatistica

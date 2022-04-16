@@ -1,5 +1,5 @@
 import { CountdownCircleTimer } from 'react-countdown-circle-timer'
-import { Container } from './style'
+import styles from './Temporizador.module.css'
 
 interface TemporizadorProps {
     key: any
@@ -10,7 +10,7 @@ interface TemporizadorProps {
 const Temporizador = (props: TemporizadorProps) => {
 
     return (
-        <Container>
+        <div className={styles.container}>
             <CountdownCircleTimer 
             
                 duration={props.duration}
@@ -23,7 +23,7 @@ const Temporizador = (props: TemporizadorProps) => {
                 {({ remainingTime  }) => remainingTime}
                 
             </CountdownCircleTimer>
-        </Container>
+        </div>
     )
 }
 
