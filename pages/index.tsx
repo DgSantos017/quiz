@@ -71,15 +71,15 @@ const Home = () => {
       }
     })
   }
-  
-  return questao ? (
-    <Questionario 
-      question={questao}
-      ultima={idProximaPergunta() === undefined}
-      questionRespondida={questionRespondida}
-      irPraProximoPasso={irPraProximoPasso}
-    />
-  ) : false
+  return 'OLa mundio'
+  // return questao ? (
+  //   <Questionario 
+  //     question={questao}
+  //     ultima={idProximaPergunta() === undefined}
+  //     questionRespondida={questionRespondida}
+  //     irPraProximoPasso={irPraProximoPasso}
+  //   />
+  // ) : false
 }
 
 export default Home
