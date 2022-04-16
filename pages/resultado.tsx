@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import Estatistica from '../components/Estatistica'
 import Botao from '../components/Botao'
 
-const resultado = () => {
+const Resultado = () => {
 
     const router = useRouter()
 
@@ -28,4 +28,4 @@ const resultado = () => {
     )
 }
 
-export default resultado
+export default Resultado

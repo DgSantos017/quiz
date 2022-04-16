@@ -1,6 +1,6 @@
 import questions from '../questions/bancoDeQuestoes'
 
-export default (req, res) => {
+export default function qestions(req, res){
 
   const id = +req.query.id
 
