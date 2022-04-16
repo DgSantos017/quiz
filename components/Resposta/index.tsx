@@ -1,5 +1,5 @@
 import RespostaModel from '../../model/resposta'
-import { Container, ConteudoResposta, Frente, Verso, Letra, Valor, RespostaCerta, RespostaErrada } from './style'
+import { Container, ConteudoResposta, Frente, Verso, Letra, Valor,Revelacao } from './style'
 
 interface RespostaProps {
     valor: RespostaModel
@@ -27,19 +27,24 @@ const Resposta = (props: RespostaProps) => {
                     </Valor>
                 </Frente>
             ) : (
-                <Verso>
-                    {resposta.certa ? (
-                        <RespostaCerta>
-                            <Valor> {resposta.valor} </Valor>
-                            <div> Resposta certaaa :) </div>
-                        </RespostaCerta>
-                    ) : (
-                        <RespostaErrada>
-                            <Valor> {resposta.valor} </Valor>
-                            <div> Resposta errada :( </div>
-                        </RespostaErrada>
-                    )}
+                <>
+                {resposta.certa ? (
+                <Verso style={{backgroundColor: 'blue'}}>
+                    <Revelacao >
+                        <Valor> {resposta.valor} </Valor>
+                        <div> Resposta certa :) </div>
+                    </Revelacao>  
                 </Verso>
+                ) : (
+                <Verso  style={{backgroundColor: 'red'}}>
+                    <Revelacao>
+                        <Valor> {resposta.valor} </Valor>
+                        <div> Resposta errada :( </div>
+                    </Revelacao>  
+                </Verso>
+                )}
+                </>
+                
             )}
                
             </ConteudoResposta>

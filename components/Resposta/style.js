@@ -52,8 +52,8 @@ export const Verso = styled.div`
     align-items: center;
     border-radius: 12px;
     padding: 15px;
-    color: #000;
-    background-color: #ccc;
+    background-color: white;
+    color: black;
 `
 export const Letra = styled.div`
     display: flex;
@@ -74,10 +74,7 @@ export const Valor = styled.div`
   
 `
 
-export const RespostaCerta = styled.div`
-   color: blue;
+export const Revelacao = styled.div`
+   color: white;
 `
 
-export const RespostaErrada = styled.div`
-  color: red;
-`

@@ -16,6 +16,7 @@ const BASE_URL = 'http://localhost:3000/api'
 const Home = () => {
 
   const [ questao, setQuestao ] = useState<QuestionModel>(questaoMock)
+  const [ respostasCertas, setRespostasCertas ] = useState<number>(0)
   const [ idsQuestoes, setIdsQuestoes ] = useState<number[]>([])
 
   async function carregarQuestoesIds() {
@@ -44,8 +45,11 @@ const Home = () => {
     idsQuestoes.length > 0 && carregarQuestao(idsQuestoes[0])
   }, [idsQuestoes])
 
-  const questionRespondida = (questao: QuestionModel) => {
+  const questionRespondida = (questionRespondida: QuestionModel) => {
 
+    setQuestao(questionRespondida)
+    const acertou = questionRespondida.acertou
+    setRespostasCertas(respostasCertas + (acertou ? 1 : 0))
   }
 
   const irPraProximoPasso = () => {
