@@ -2,6 +2,7 @@ import QuestionModel from '../model/question'
 import { useEffect, useState } from 'react'
 import Questionario from '../components/Questionario'
 import { useRouter } from 'next/router'
+import Loading from '../components/Loading'
 
 const BASE_URL = 'https://quiz-kappa-seven.vercel.app/api'
 
@@ -80,7 +81,7 @@ const Game = () => {
       irPraProximoPasso={irPraProximoPasso}
     />
   ) 
-: <h2> Ola mundio </h2>
+: <Loading />
 }
 
 export default Game
