@@ -80,7 +80,7 @@ const Game = () => {
       irPraProximoPasso={irPraProximoPasso}
     />
   ) 
-: null
+: <h2> Ola mundio </h2>
 }
 
 export default Game
